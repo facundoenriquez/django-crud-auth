@@ -5,9 +5,13 @@
 <ul>
     <li>
         <a href="{% url "task_detail" task.id %}">
+            {% if task.important %}
+            <p><strong>{{task.title}}</strong></p>
+            {% else %}
+            <p> {{task.title}} </p>
+            {% endif %}
             <p>{{task.description}}</p>
             <p>{{task.user.username}}</p>
-            <p>{{task.title}}</p>
         </a>
     </li>
 </ul>
